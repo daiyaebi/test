@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- Strutsの詳細設定 -->
+<struts>
+<constant name="struts.devMode" value="true" />
+		<package name="com.yamaiku.action" extends="struts-default">
+
+				<!-- GoHomeAction -->
+				<action name="GoHomeAction" class="com.yamaiku.action.GoHomeAction" method="execute">
+				<result name="success">home.jsp</result>
+				</action>
+
+				<!-- HomeAction -->
+				<action name="HomeAction" class="com.yamaiku.action.HomeAction" method="execute">
+				<result name="success">yamaiku.home.html</result>
+				<result name="login">login.jsp</result>
+				</action>
+
+				<!-- LoginAction -->
+				<action name="LoginAction" class="com.yamaiku.action.LoginAction" method="execute">
+				<result name="success">yamaiku.home.html</result>
+				<result name="error">login.jsp</result>
+				</action>
+
+				<!-- UserCreateAction -->
+				<action name="UserCreateAction" class="com.yamaiku.action.UserCreateAction" method="execute">
+				<result name="success">userCreate.jsp</result>
+				<result name="back">login.jsp</result>
+				</action>
+
+				<!-- UserCreateConfirmAction -->
+				<action name="UserCreateConfirmAction" class="com.yamaiku.action.UserCreateConfirmAction" method="execute">
+				<result name="success">userCreateConfirm.jsp</result>
+				<result name="error">userCreate.jsp</result>
+				</action>
+
+				<!-- UserCreateCompleteAction -->
+				<action name="UserCreateCompleteAction" class="com.yamaiku.action.UserCreateCompleteAction" method="execute">
+				<result name="success">userCreateComplete.jsp</result>
+				</action>
+
+				<!-- LogoutAction -->
+				<action name="LogoutAction" class="com.yamaiku.action.LogoutAction" method="execute">
+				<result name="success">home.jsp</result>
+				</action>
+
+		</package>
+</struts>
